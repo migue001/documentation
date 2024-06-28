@@ -3,9 +3,8 @@ Lead distribution report
 ========================
 
 A *lead distribution report* can be used to see if active leads are being assigned equitably
-across sales members, view the distribution of good or `quality leads <https://www.odoo.com/
-documentation/17.0/applications/sales/crm/track_leads/quality_leads_report.html>`_, and see how
-frequently each salesperson is receiving (and keeping) leads.
+across sales members. It can also be used to view the distribution of good or :doc:`quality leads
+<quality_leads_report>`, and see how frequently each salesperson is receiving (and keeping) leads.
 
 Lead distribution reports can be run each week to help keep salespeople on track, while
 providing them with ample good leads. These reports can also be used to see whether sales members
@@ -25,25 +24,25 @@ Custom filters can now be added by clicking the :icon:`fa-caret-down` :guilabel:
 icon, to the right of the :guilabel:`Search...` bar, to reveal a drop-down menu of search and filter
 options.
 
-Three columns will be displayed: :guilabel:`Filters`, :guilabel:`Group By`, and
+Three columns are displayed: :guilabel:`Filters`, :guilabel:`Group By`, and
 :guilabel:`Favorites`.
 
 .. image:: lead_distribution_report/filters-dropdown.png
-   :align: center
-   :alt: Clicking the dropdown arrow in the search bar will display filters, groups, and favorites.
+  :align: center
+  :alt: Clicking the dropdown arrow in the search bar will display filters, groups, and favorites.
 
 To begin, navigate to the bottom of the :guilabel:`Filters` column, and click :guilabel:`Add Custom
 Filter`. This opens an :guilabel:`Add Custom Filter` pop-up window, where a custom filter can be
 created.
 
 .. image:: lead_distribution_report/add-custom-filters.png
-   :align: center
-   :alt: The Add Custom Filter pop-up window allows custom filtering rules to be created.
+  :align: center
+  :alt: The Add Custom Filter pop-up window allows custom filtering rules to be created.
 
 Custom filters
 --------------
 
-The following conditions are provided as an example of a *good* but *not comprehensive*
+The following conditions are provided as an example of a *good*, but *not comprehensive*,
 set of rules for finding good leads. These filters should be applied in the order specified to
 achieve a heavily-detailed filter.
 
@@ -76,7 +75,7 @@ the report.
 ~~~~~~~~~~~~~~~~~~~~~
 
 Click the first field, under :guilabel:`Match any of the following rules:`, that has the value
-:guilabel:`Country` in it. A pop-up window appears. In that pop-up window, type `Date` in the
+:guilabel:`Country` in it. A pop-up window appears. In that pop-up window, type `Created on` in the
 :guilabel:`Search...` bar, or scroll to search through the list to locate and select it.
 
 Then, in the second field of the :guilabel:`Add Custom Filter` pop-up window, select :guilabel:`>=`
@@ -86,13 +85,12 @@ in the third, rightmost field.
 The third field on the :guilabel:`Add Custom Filter` pop-up window should contain the earliest date
 leads are selected from.
 
-For example,
-setting `01/01/2024 00:00:00` only includes leads created from, and including, the first day of
-2024.
+For example, setting `01/01/2024 00:00:00` only includes leads created from, and including, the
+first day of 2024.
 
 .. image:: lead_distribution_report/created-on.png
-   :align: center
-   :alt: Add a Created On rule for the start of the year onward.
+  :align: center
+  :alt: Add a Created On rule for the start of the year onward.
 
 .. _team-location:
 
@@ -106,12 +104,23 @@ Selecting this operator filters for any records that contain the words in the th
 field.
 
 In this third field, enter the name of the desired sales team(s). For example, setting `us direct sf
-northam` **only** includes sales teams assigned to the U.S., direct, San Francisco, and North
-America.
+northam` **only** includes sales teams with titles containing *US*, *direct*, *San Francisco*, and
+*North America*.
 
 .. image:: lead_distribution_report/sales-team-location.png
+  :align: center
+  :alt: Use Sales Team to filter the location the lead is associated with.
+
+By adding this new rule, a new line appears at the top of the pop-up menu showing :guilabel:`Match
+any of:` with a :icon:`fa-caret-down` :guilabel:`(down caret)` icon.
+
+Click the icon, then select :guilabel:`all` from the resulting list. This setting causes the filter
+to **only** show records that match all the rules contained inside. This uses the same logic as an
+AND (&) logical operator.
+
+.. image:: lead_distribution_report/any-to-all.png
    :align: center
-   :alt: Use Sales Team to filter the location the lead is associated with.
+   :alt: Click "any of" and select "all of" from the dropd-down menu.
 
 .. _phone-number:
 
@@ -124,80 +133,88 @@ Selecting this operator **only** filters for records that have a phone number as
 lead.
 
 .. image:: lead_distribution_report/phone-set.png
-   :align: center
-   :alt: Report only leads with an associated phone number with the Phone field.
+  :align: center
+  :alt: Report only leads with an associated phone number with the Phone field.
+
+This rule adds only leads with an associated phone number to the report.
 
 .. _active-status:
 
 4. Active status
 ~~~~~~~~~~~~~~~~
 
-Click the :guilabel:`Branch` icon to the right of `Phone is set` line, to add a new rule that
-branches from the rules above.
+Click the :icon:`fa-sitemap` :guilabel:`(Branch)` icon to the right of the `Phone is set` line, to
+add a new rule that branches from the rules above.
 
-Two horizontal sets of fields appear below a line showing :guilabel:`all of:` with a
-:icon:`fa-caret-down` :guilabel:`(down caret)`. Click the down caret, then select
-:guilabel:`any` from the resulting list.
+Two horizontal sets of fields appear below a line showing :guilabel:`any of:` with a
+:icon:`fa-caret-down` :guilabel:`(down caret)` icon. This setting filters for
+records that match **any** of the rules contained inside. This uses the same logic as an OR (|)
+logical operator.
 
 Set the first field to :guilabel:`Active`. Then, select :guilabel:`is set` in the next field.
 
 .. image:: lead_distribution_report/add-branch.png
-   :align: center
-   :alt: Click the second button to the right of phone is set labeled add branch.
+  :align: center
+  :alt: Click the second button to the right of phone is set labeled add branch.
 
-Next, click the :icon:`fa-plus` :guilabel:`New Rule` button next to :guilabel:`Active is set` to
+Next, click the :icon:`fa-plus` :guilabel:`(New Rule)` button next to :guilabel:`Active is set` to
 create a new line of fields beneath it.
 
 Set the first field to :guilabel:`Active`. Then, select :guilabel:`is not set` in the next field.
-This rule will add the activity status of the lead to the report.
 
 .. image:: lead_distribution_report/active-set.png
-   :align: center
-   :alt: Use Active to include active status in the report.
+  :align: center
+  :alt: Use Active to include active status in the report.
+
+This rule adds the activity status of the lead to the report.
 
 .. _referred-by:
 
-1. Referred by
+5. Referred by
 ~~~~~~~~~~~~~~
 
-Click the :guilabel:`Branch` icon to the right of :guilabel:`any of:` field to add a new set of
-rules. These appear as a new line of fields on a separate branch from the rules above. Change
-:guilabel:`all of:` to :guilabel:`any of:`.
+Click the :icon:`fa-plus` :guilabel:`(New Rule)` button next to :guilabel:`Active is not set` to
+create a new line of fields beneath it.
 
 Next, set the first field to :guilabel:`Referred By`. In the second field, select
-:guilabel:`contains` from the drop-down menu. In the last field, type `appointment`. This adds
-any leads that were referred by an appointment.
+:guilabel:`contains` from the drop-down menu. In the last field, type `appointment`.
 
 .. image:: lead_distribution_report/referred-by.png
-   :align: center
-   :alt: Add referred by as a branch to filter appointments.
+  :align: center
+  :alt: Add referred by as a branch to filter appointments.
+
+This rule adds any leads that were referred by an appointment to the report.
 
 .. _source:
 
-1. Source
+6. Source
 ~~~~~~~~~
 
-Click the :icon:`fa-plus` :guilabel:`New Rule` button next to the line for `Referred by
-appointment`. Set the first field to :guilabel:`Source`. Select :guilabel:`contains` from the
-drop-down menu in the second field. Type `livechat` in the third field. This rule adds any leads
-that came from livechat to the report.
+Click the :icon:`fa-plus` :guilabel:`(New Rule)` button next to the line for `Referred by
+appointment`.
+
+Next, set the first field to :guilabel:`Source`. Select :guilabel:`contains` from the
+drop-down menu in the second field. Type `livechat` in the third field.
 
 .. image:: lead_distribution_report/add-source.png
-   :align: center
-   :alt: Adding a rule for source to filter for livechat.
+  :align: center
+  :alt: Adding a rule for source to filter for livechat.
+
+This rule adds any leads that came from livechat to the report.
 
 .. _notes:
 
 7. Notes
 ~~~~~~~~
 
-Click the :icon:`fa-plus` :guilabel:`New Rule` button next to line for `Source contains livechat`.
-Set the first field to :guilabel:`Notes`. Click the second field, and select :guilabel:`contains`
-from the drop-down menu. Type `mrp` in the third field.
+Click the :icon:`fa-plus` :guilabel:`(New Rule)` button next to line for `Source contains livechat`.
 
-Click the :icon:`fa-plus`
-:guilabel:`New Rule` icon next to the line for `Notes contains mrp`, and add a new rule for notes
-containing `stock`. Repeat the process to create new rules containing the following terms:
+Next, set the first field to :guilabel:`Notes`. Click the second field, and select
+:guilabel:`contains` from the drop-down menu. Type `mrp` in the third field.
+
+Click the :icon:`fa-plus` :guilabel:`(New Rule)` icon next to the line for `Notes contains mrp`, and
+add a new rule for notes containing `stock`. Repeat the process to create new rules containing the
+following terms:
 
 #. purchase
 #. plm
@@ -207,24 +224,26 @@ containing `stock`. Repeat the process to create new rules containing the follow
 #. fsm
 
 .. image:: lead_distribution_report/add-notes.png
-   :align: center
-   :alt: Add rules that contain the 8 terms listed above.
+  :align: center
+  :alt: Add rules that contain the 8 terms listed above.
 
-This includes any leads with the above terms in the attached notes to the report.
+This rule includes any leads with the above terms in the attached notes to the report.
 
 .. _tags:
 
 8. Tags
 ~~~~~~~
 
-Click the :icon:`fa-plus` :guilabel:`New Rule` icon next to line for `Notes contains fsm`.
-Set the first field to `Tags`. Select :guilabel:`contains` from the drop-down menu in the second
-field. Then, type `20` in the third field. This adds any leads that are tagged as a size of 5-20 or
-20-50.
+Click the :icon:`fa-plus` :guilabel:`(New Rule)` icon next to line for `Notes contains fsm`.
+
+Next, set the first field to `Tags`. Select :guilabel:`contains` from the drop-down menu in the
+second field. Then, type `20` in the third field.
 
 .. image:: lead_distribution_report/add-tags.png
-   :align: center
-   :alt: Add a rule for "20" to filter size.
+  :align: center
+  :alt: Add a rule for "20" to filter size.
+
+This rule adds any leads that are tagged as a size of 5-20 or 20-50 to the report.
 
 .. _email:
 
@@ -243,20 +262,67 @@ Repeat the previous steps to add rules for the following contents:
 #. yahoo
 
 .. image:: lead_distribution_report/add-email.png
-   :align: center
-   :alt: Add rules to filter out the above four email domains.
+  :align: center
+  :alt: Add rules to filter out the above four email domains.
+
+This rule filters out any undesired email addresses from the report.
 
 .. _salesperson:
 
 10. Salesperson
 ~~~~~~~~~~~~~~~
 
-Click :guilabel:`New rule` to add a new rule. Click the first field, and locate
+Click :guilabel:`New rule` to add a new rule. Click the first field, then locate and select
 :guilabel:`Salesperson`. Click the :icon:`fa-chevron-right` :guilabel:`(right chevron)` button to
 the right. A new list of salespeople attributes appears. Select :guilabel:`Active` from the list.
 In the second field, select :guilabel:`is` from the drop-down menu. In the third drop-down menu,
 select :guilabel:`set`.
 
 .. image:: lead_distribution_report/add-salesperson.png
+  :align: center
+  :alt: Add a salesperson's activity status to ensure an active salesperson is selected.
+
+This rule ensures only leads with an active salesperson are added to the report.
+
+Save the filter settings
+========================
+
+Now that all the rules for the filter are set, click the purple :guilabel:`Confirm` button at the
+bottom of the pop-up menu to save the custom filter and close the pop-up menu.
+
+.. image:: lead_distribution_report/confirm-filter.png
    :align: center
-   :alt: Add a salesperson's activity status to ensure an active salesperson is selected.
+   :alt: Click the confirm button to save the filter.
+
+
+The :guilabel:`Pipeline Analysis` dashboard is now displayed again with each filter rule in the
+:guilabel:`Search...` bar. Click the :icon:`fa-caret-down` :guilabel:`(down caret)` icon, to the
+right of the :guilabel:`Search...` bar, to reveal a drop-down menu of search and filter options.
+
+Scroll to the bottom and click the :guilabel:`Save current search` button. Next, type a name for the
+filter in the text box below. Check the :guilabel:`Shared` checkbox to have the filter shared with
+any user with access to the pipeline. Finally, click the purple :guilabel:`Save` button below to
+save the filter.
+
+The filter will now appear with the name it was given under the :guilabel:`Favorites` section of the
+drop-down menu and can be re-applied by clicking on it.
+
+.. image:: lead_distribution_report/save-filter.png
+   :align: center
+   :alt: Click the save button to save the filter under favorites.
+
+View lead distribution reports
+==============================
+
+From the :guilabel:`Pipeline Analysis` dashboard, apply the filter created above in the
+:guilabel:`Search...` bar if it does not appear in the search already. Next, click the
+:icon:`oi-list-view` :guilabel:`(List view)` button to view all the leads that fit the filter in A
+list format. :icon:`fa-caret-down` :guilabel:`(down caret)` icon to expand the list and view leads.
+
+.. image:: lead_distribution_report/list-view.png
+   :align: center
+   :alt: List view will display all leads in a list format organized by the filter.
+
+
+.. seealso::
+   :doc:`../../../essentials/search`
