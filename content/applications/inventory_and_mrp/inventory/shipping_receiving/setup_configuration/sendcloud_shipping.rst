@@ -217,6 +217,34 @@ Additionally, the tracking number is now available.
    When return labels are created, Sendcloud will automatically charge the configured Sendcloud
    account.
 
+Shipping rules
+--------------
+
+Optionally, create shipping rules to automatically generate shipping labels tailored to different
+products' needs. For example, a shipping rule can be created for customers shipping expensive
+jewelry items to purchase insurance.
+
+To use shipping rules, navigate to :menuselection:`Inventory app --> Configuration --> Shipping
+Methods` and select the intended `Sendcloud` shipping method.
+
+In the :guilabel:`Sendcloud Configuration` tab, in the :guilabel:`Use Sendcloud shipping rules`
+field, choose the kind of shipments the shipping rules apply to: :guilabel:`Shipping` to customers,
+:guilabel:`Returns`, or :guilabel:`Both`.
+
+.. image:: sendcloud_shipping/enable-shipping-rules.png
+   :align: center
+   :alt: Use Shipping Rules field.
+
+Then, in the Sendcloud website, navigate to :menuselection:`Settings --> Shipping rules`. Create a
+new shipping rule by clicking :guilabel:`Create New`.
+
+Set a :guilabel:`Condition` to determine when the rule applies, in the :guilabel:`Actions` section,
+configure what to do when packages meet the condition.
+
+.. seealso::
+   `Example of shipping rule
+   <https://support.sendcloud.com/hc/en-us/articles/10274470454292-How-to-create-shipping-rules#examples-smart-shipping-rules>`_
+
 FAQ
 ===
 
