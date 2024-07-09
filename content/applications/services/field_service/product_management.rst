@@ -1,10 +1,30 @@
+==================
+Product management
+==================
+
+When field service workers perform on-site, they commonly use products for the service. Odoo’s
+**Field Service** app allows them to record the products they’re using. Doing so keeps your
+inventory up-to-date in real-time and automatically adds these products to the invoice.
+
+Add products to a task
 ======================
+
+#. Go to :guilabel:`Field Service`
+#. Select a task
+#. Click the :guilabel:`Products` Smart Button
+#. Click a product card to add it to your task. You can click anywhere on the card to add the
+   product.
+#. If needed, add more products or remove some using the :guilabel:`-` and :guilabel:`+` buttons
+
+Going back to your task, the smart button now displays the amount of products you added and the
+price.
+
 User default warehouse
 ======================
 
-Setting up a **default warehouse** can be useful for field technicians who keep a supply in their
-van or those who always resupply from the same warehouse. It also allows field workers to switch
-between warehouses from their profiles.
+Setting up a **default warehouse** can be useful for field technicians who keep a supply on the go
+in their van or those who always resupply from the same warehouse. It also allows field workers to
+switch between warehouses from their profiles.
 
 Products in sales orders created during field interventions are always pulled from the default
 warehouse, keeping the inventory accurate.
@@ -44,7 +64,7 @@ To set up a default warehouse for a specific user, go to :menuselection:`Setting
 Manage users`, select a user, then go to the :guilabel:`Preferences` tab. Scroll down to
 :guilabel:`Inventory`, and select the default warehouse from the drop-down menu.
 
-.. image:: default_warehouse/user-default.png
+.. image:: product_management/user-default.png
    :alt: Selection of a default warehouse on a user profile.
 
 Use in field service tasks
